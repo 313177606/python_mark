@@ -1,0 +1,33 @@
+deque队列安全性
+import collections
+from collections import deque
+import queue
+from multiprocessing import Process, freeze_support
+import time
+
+def burn(direction, nextSource):
+    while True:
+        try:
+            next = nextSource()
+        except IndexError:
+            break
+        else:
+            print('%s : %s' % (direction, next))
+            time.sleep(0.1)
+    print("done %s" % direction)
+
+
+if __name__ == '__main__':
+
+    freeze_support()
+    candle = deque(range(20))
+    p1 = Process(target=burn,args=('left',candle.popleft,))
+
+    p2 = Process(target=burn,args=('right', candle.pop,))
+
+    print(candle)
+    p1.start()
+    p2.start()
+
+    p1.join()
+    p2.join()

@@ -1,0 +1,38 @@
+一行交换变量 
+a, b = b, a 
+
+字符串转换成当前的变量名
+locals()[varName]， vars()[varName]， eval(varName)
+
+字符串链接
+names = ['Tom', 'Jack', 'Sam']
+a='_'.join(names)
+
+循环遍历区间元素
+for i in range(6) 
+print(i)
+
+索引下标
+num_list = [1, 4, 9]
+for i, val in enumerate(num_list):
+    print(i, '-->', val)
+    print(num_list[i])
+
+读文件
+with open('render.html') as f:
+    data = f.read()
+print(data)
+
+
+一行代码启动一个web服务 
+python -m SimpleHTTPServer    8080 
+python3 -m http.server  8080 
+
+
+ 一行代码实现代码变量值互换
+a,b = 1,2 ;  a,b = b,a ; 
+
+一行代码解决Fizzbuzz问题
+for x in range(1,101): print("fizz" [ x % 3*4: ] +"buzz"[ x%5*4: ] or x  )
+
+

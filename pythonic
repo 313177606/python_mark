@@ -23,6 +23,13 @@ with open('render.html') as f:
     data = f.read()
 print(data)
 
+查找集合中大于100 的元素
+a_set = [1,2,3,4,5,12,3124,5543,123]
+b_set = [312,41,532,654,82]
+result = [(x, y) for x in a_set for y in b_set if x + y > 100]
+print(result)
+
+
 
 一行代码启动一个web服务 
 python -m SimpleHTTPServer    8080 
@@ -34,5 +41,4 @@ a,b = 1,2 ;  a,b = b,a ;
 
 一行代码解决Fizzbuzz问题
 for x in range(1,101): print("fizz" [ x % 3*4: ] +"buzz"[ x%5*4: ] or x  )
-
 
